@@ -9,10 +9,10 @@ cat $1 | tr ',' ' ' | sort -k 4 -n | tail -n 1 | cut -d ' ' -f 1,2,4
 echo "Lowest Earner:"
 cat $1 | tr ',' ' ' | sort -k 4 -n | head -n 2 | tail -n 1 |cut -d ' ' -f 1,2,4
 
-echo "Number of femailes in Top 10 Earners:"
+echo "Number of females in Top 10 Earners:"
 cat $1 | tr ',' ' ' | sort -k 4 -n | tail -n 10 | grep -c female
 
 echo "Effect of Graduating College:"
-lowhs=$(cat $1 | grep ",12," | cut -d , -f 4 | sort -n | head -n 1)
-lowcd=$(cat $1 | grep ",16," | cut -d , -f 4 | sort -n | head -n 1)
+lowhs=$(cat $1| grep ",12," | cut -d , -f 4 | sort -n | head -n 1)
+lowcd=$(cat $1| grep ",16," | cut -d , -f 4 | sort -n | head -n 1)
 echo "lowcd - lowhs" | bc
